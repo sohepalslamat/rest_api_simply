@@ -5,9 +5,20 @@
 </template>
 
 <script>
+import axios from "axios"
 
 export default {
   name: 'App',
+  data(){
+    return{
+     
+    }
+  },
+  created(){
+    axios.get('http://sohep91.pythonanywhere.com/books/5/').then((res)=>{
+      console.log(res.data)
+    })
+  }
   
 }
 </script>
