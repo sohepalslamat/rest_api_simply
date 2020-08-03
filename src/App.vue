@@ -1,39 +1,26 @@
 <template>
   <div id="app">
-    book id = {{book.id}}
-    book name = {{book.name}}
-    book price = {{book.price}} 
-    <hr>
-    <ul>
-      <li v-for="book in books" :key="book.id">
-        <h3>name: {{book.name}}</h3>
-        <h4>price: {{book.price}}</h4>
-      </li>
-    </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <router-link class="nav-link" :to="{name:'books'}">books</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" :to="{name: 'add_book'}">add book</router-link>
+        </li>
+      </ul>
+      
+    </nav>
+	
+	<router-view></router-view> 
     
   </div>
 </template>
 
 <script>
-import axios from "axios"
-
 export default {
   name: 'App',
-  data(){
-    return{
-      books:[],
-      book:{}
-     
-    }
-  },
-  created(){
-    axios.get('http://sohep91.pythonanywhere.com/books/').then((res)=>{
-      this.books = res.data
-    })
-    axios.get('http://sohep91.pythonanywhere.com/books/5/').then((res)=>{
-      this.book = res.data
-    })
-  }
+  
   
 }
 </script>
