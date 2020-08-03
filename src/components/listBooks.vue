@@ -11,6 +11,7 @@
               <input v-model="book.price" @keyup.enter="updateBook(book.id,'price', book.price)" v-if="!show1" type="text">
             </h4>
             <router-link class="nav-link" :to="{name: 'edit_book', params:{id:book.id}}">Edit</router-link>
+            <a href="" class="nav-link" @click="deleteBook(book.id)">Delete</a>
           ---------------
         </li>
     </ul>
@@ -42,6 +43,11 @@ export default {
           this.show = true
         } else this.show1 = true
         
+      })
+    },
+    deleteBook(id){
+      axios.delete(`http://sohep91.pythonanywhere.com/books/${id}/`).then((res)=>{
+        console.log(res.status)
       })
     }
 
