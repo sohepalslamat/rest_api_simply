@@ -5,7 +5,7 @@
           <li v-for="book in books" :key="book.id">
             <h3>name: {{book.name}}</h3>
             <h4>price: {{book.price}}</h4>
-            
+            <router-link class="nav-link" :to="{name: 'edit_book', params:{id:book.id}}">Edit</router-link>
           </li>
           
         </div>
