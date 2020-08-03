@@ -6,7 +6,7 @@
           <router-link class="nav-link" :to="{name:'books'}">books</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" :to="{name: 'books'}">add book</router-link>
+          <router-link class="nav-link" :to="{name: 'add_book'}">add book</router-link>
         </li>
       </ul>
       
