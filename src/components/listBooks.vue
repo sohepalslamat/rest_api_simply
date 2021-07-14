@@ -31,7 +31,7 @@ export default {
     }
   },
   created(){
-    axios.get('https://vuango-books-api.herokuapp.com/books').then((res)=>{
+    axios.get('https://vuango-books-api.herokuapp.com/books/').then((res)=>{
       this.books = res.data
     })
   },
