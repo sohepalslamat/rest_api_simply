@@ -32,7 +32,7 @@ export default {
     },
     methods:{
         sendData(){
-            axios.post('http://sohep91.pythonanywhere.com/books/', this.book).then((res) => {
+            axios.post('https://vuango-books-api.herokuapp.com/books', this.book).then((res) => {
                 console.log(res.status)
                 this.$router.push({name:'books'})
             })

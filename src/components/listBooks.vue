@@ -31,13 +31,13 @@ export default {
     }
   },
   created(){
-    axios.get('http://sohep91.pythonanywhere.com/books/').then((res)=>{
+    axios.get('https://vuango-books-api.herokuapp.com/books').then((res)=>{
       this.books = res.data
     })
   },
   methods:{
     updateBook(id, item, value) {
-      axios.patch(`http://sohep91.pythonanywhere.com/books/${id}/?${item}=${value}`).then((res) => {
+      axios.patch(`https://vuango-books-api.herokuapp.com/books/${id}/?${item}=${value}`).then((res) => {
         console.log(res.status)
         if(item == 'name'){
           this.show = true
@@ -46,7 +46,7 @@ export default {
       })
     },
     deleteBook(id){
-      axios.delete(`http://sohep91.pythonanywhere.com/books/${id}/`).then((res)=>{
+      axios.delete(`https://vuango-books-api.herokuapp.com/books/${id}/`).then((res)=>{
         console.log(res.status)
       })
     }
