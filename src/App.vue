@@ -15,7 +15,7 @@ export default {
     }
   },
   created(){
-    axios.get('http://sohep91.pythonanywhere.com/books/5/').then((res)=>{
+    axios.get('https://vuango-books-api.herokuapp.com/books/5/').then((res)=>{
       console.log(res.data)
     })
   }
