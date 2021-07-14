@@ -32,14 +32,14 @@ export default {
     },
     created(){
         const id = this.$route.params.id
-        axios.get(`http://sohep91.pythonanywhere.com/books/${id}/`).then((res)=>{
+        axios.get(`https://vuango-books-api.herokuapp.com/books/${id}/`).then((res)=>{
             this.book = res.data
         })
     },
     methods:{
         sendData(){
             const id = this.$route.params.id
-            axios.put(`http://sohep91.pythonanywhere.com/books/${id}/`, this.book).then((res) => {
+            axios.put(`https://vuango-books-api.herokuapp.com/books/${id}/`, this.book).then((res) => {
                 console.log(res.status)
                 this.$router.push({name:'books'})
             })
